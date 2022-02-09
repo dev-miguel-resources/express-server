@@ -18,6 +18,7 @@ app.use(morgan("dev"));
 app.use(express.json({ limit: "2mb" })); // standard configuration
 app.use(cors());
 
+
 // port
 const port = process.env.PORT || 8000;
 
