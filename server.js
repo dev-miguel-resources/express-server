@@ -18,6 +18,14 @@ app.use(morgan("dev"));
 app.use(express.json({ limit: "2mb" })); // standard configuration
 app.use(cors());
 
+// bad practice
+/*app.use(userRoutes);
+*app.use(userRoutes);
+app.use(productRoutes);
+app.use(categoryRoutes);*/
+
+// fs - good practice
+readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
 
 // port
 const port = process.env.PORT || 8000;
