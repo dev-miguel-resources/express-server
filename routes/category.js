@@ -1,8 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-// routes
-router.post("/product");
-router.get("/products/total");
+const { create } = require("../controllers/category");
+
+// PRINCIPIO SOLID: Inyección de Dependencias
+// PRINCIPIO SOLID: Inversión de Dependencias
+// endpoints
+router.post("/category", create);
+//router.get("/categories", list);
+//router.get("/category/:slug", read);
+//router.put("/category/:slug", update);
+//router.delete("/category/:slug", remove);
+//router.patch("/category/:slug", removeSoft);
 
 module.exports = router;

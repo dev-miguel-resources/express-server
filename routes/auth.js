@@ -3,8 +3,8 @@ const router = express.Router();
 
 
 // routes
-router.post("/product");
-router.get("/products/total");
+router.post("/auth");
+router.get("/auth/pendiente");
 
 
 module.exports = router;
