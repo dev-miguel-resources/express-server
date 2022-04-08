@@ -15,26 +15,19 @@ const { create, list, read, update, remove, removeSoft } = require("../controlle
  *         application/json:
  *           schema:
  *             $ref: "#/components/schemas/Category"
- *   responses: 
- *     200:
- *       description: ok
- *       content: 
- *         application/json:
- *           schema: 
- *             $ref: "#/components/schemas/Category"
- *     400:
- *       description: bad request
+ *     responses:
+ *       200: 
+ *         description: ok
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: "#/components/schemas/Category"
+ *       400:
+ *         description: bad request     
  */
 router.post("/category", create);
 
-router.get("/categories", list);
-router.get("/category/:slug", read);
-router.put("/category/:slug", update);
-router.delete("/category/:slug", remove);
-router.patch("/category/:slug", removeSoft);
-
-module.exports = router;
-
+// SCHEMAS
 /**
  * @swagger
  * components:
@@ -55,15 +48,23 @@ module.exports = router;
  *            lowercase: true
  *            index: true
  *         status:
- *              type: string
- *              default: "Active"
- *              enum:
- *              - "Active"
- *              - "Inactive"
- *       example: 
+ *            type: string
+ *            default: "Active"
+ *            enum:
+ *            - "Active"
+ *            - "Inactive"
+ *       example:
  *         name: Fashion
  *         slug: fashion
- *         status: Active
+ *         status: Active      
  */
+
+router.get("/categories", list);
+router.get("/category/:slug", read);
+router.put("/category/:slug", update);
+router.delete("/category/:slug", remove);
+router.patch("/category/:slug", removeSoft);
+
+ module.exports = router;
 
 

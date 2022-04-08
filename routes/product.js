@@ -5,7 +5,6 @@ const { authCheck, adminCheck } = require("../middlewares/auth");
 
 const { create, productsCount, listAll, removeSoft, read, update, list } = require("../controllers/product");
 
-// routes
 router.post("/product", authCheck, adminCheck, create);
 router.get("/products/total", productsCount);
 router.get("/products/:count", listAll);
